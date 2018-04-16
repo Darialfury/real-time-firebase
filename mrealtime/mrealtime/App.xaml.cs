@@ -13,8 +13,9 @@ namespace mrealtime
 		{
 			InitializeComponent();
 
-			MainPage = new mrealtime.MainPage();
-		}
+            //MainPage = new mrealtime.MainPage();
+            MainPage = new mrealtime.Views.RealTimePage();
+        }
 
 		protected override void OnStart ()
 		{

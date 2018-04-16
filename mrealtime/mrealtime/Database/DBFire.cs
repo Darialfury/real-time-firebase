@@ -1,6 +1,7 @@
 ﻿using Firebase.Database;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +25,12 @@ namespace mrealtime.Database
                                    apellido = item.Object.apellido
                                }).ToList();
             return list;
+        }
+        public ObservableCollection<Model.tdpdata> getTdpData(){
+            var data = client.Child("tdpdata")
+                       .AsObservable<Model.tdpdata>()
+                       .AsObservableCollection();
+            return  data;
         }
     }
 }
